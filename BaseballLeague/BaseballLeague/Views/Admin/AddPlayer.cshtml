@@ -1,0 +1,56 @@
+﻿﻿@model BaseballLeague.Models.PlayerVM
+@{
+    ViewBag.Title = "AddPlayer";
+}
+
+<h2>Add Player</h2>
+
+<br />
+@using (Html.BeginForm("AddPlayer", "Admin", FormMethod.Post, new { id = "addPlayerForm" }))
+{
+    <fieldset>
+        @Html.ValidationSummary(true)
+    <div class="col-sm-12">
+        <div>
+            <label>Teams:</label>
+            @Html.DropDownListFor(vm => vm.Player.TeamName, Model.Teams, "Select Team", new { @class = "form-control", placeholder = "Team" })
+        </div>
+
+        <div>
+            <label>First Name:</label>
+            @Html.TextBoxFor(vm => vm.Player.FName, new { @class = "form-control", placeholder = "First Name" })
+            <p style="color: red">@Html.ValidationMessageFor(vm => vm.Player.FName)</p>
+        </div>
+
+        <div>
+            <label>Last Name:</label>
+            @Html.TextBoxFor(n => n.Player.LName, new { @class = "form-control", placeholder = "Last Name" })
+            <p style="color: red">@Html.ValidationMessageFor(n => n.Player.LName)</p>
+        </div>
+        <div>
+            <label>Jersey Number:</label>
+            @Html.TextBoxFor(n => n.Player.JerseyNum, new { @class = "form-control", placeholder = "Jersey Number" })
+            <p style="color: red">@Html.ValidationMessageFor(n => n.Player.JerseyNum)</p>
+        </div>
+        <div>
+            <label>Position:</label>
+            @Html.EnumDropDownListFor(m => m.Player.PlayerPosition, "--Select a Position--", new { @class = "form-control" })
+            <p style="color: red">@Html.ValidationMessageFor(m => m.Player.PlayerPosition)</p>
+        </div>
+        <div>
+            <label>Batting Average:</label>
+            @Html.TextBoxFor(n => n.Player.BattingAVG, new { @class = "form-control", placeholder = "Batting Average" })
+            <p style="color: red">@Html.ValidationMessageFor(n => n.Player.BattingAVG)</p>
+        </div>
+        <div>
+            <label>Years Played:</label>
+            @Html.TextBoxFor(n => n.Player.YearsPlayed, new { @class = "form-control", placeholder = "Years Played" })
+            <p style="color: red">@Html.ValidationMessageFor(n => n.Player.YearsPlayed)</p>
+        </div>
+        <div>
+            <button class="btn btn-success">Add Player</button>
+            @Html.ActionLink("Cancel", "AdminPlayerList", "Admin", null, new { @class = "btn btn-danger" })
+        </div>
+    </div>
+        </fieldset>
+}

@@ -1,0 +1,32 @@
+﻿﻿@model List<BaseballLeague.Models.Player>
+@{
+    ViewBag.Title = "AdminPlayerList";
+}
+
+
+<div class="row">
+    <div class="col-xs-4">
+        <table class="table table-hover">
+            <thead><tr><h2>Players</h2></tr></thead>
+            @Html.ActionLink("Add Player", "AddPlayer", "Admin", null, new { @class = "btn btn-primary" })
+            <tbody>
+                @foreach (var player in Model)
+                {
+                    <tr>
+                        <td>@player.FName @player.LName</td>
+                        <td>
+                            @Html.ActionLink("Delete", "DeletePlayer", "Admin", new { playerId = player.PlayerID }, new { @class = "btn btn-sm btn-danger" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section scripts{
+    <link rel="stylesheet" href="//code.jquery.com/ui/3.1.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui-3.1.1.min.js"></script>
+}

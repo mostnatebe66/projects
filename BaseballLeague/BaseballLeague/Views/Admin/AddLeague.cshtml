@@ -1,0 +1,26 @@
+﻿﻿@model BaseballLeague.Models.League
+@{
+    ViewBag.Title = "AddLeague";
+}
+
+<h2>AddLeague</h2>
+@Html.ActionLink("Cancel", "AdminLeagueList", "Admin", null, new { @class = "btn btn-danger" })
+<br />
+@using (Html.BeginForm("AddLeague", "Admin"))
+{
+    <fieldset>
+        @Html.ValidationSummary(true)
+        <div class="col-sm-12">
+            <table class="table-bordered" style="width: 300px;">
+                <tr>
+                    <td><label>League Name:</label></td>
+                    @Html.TextBoxFor(l => l.Name, new { @class = "form-control" })
+                    <p style="color: red">@Html.ValidationMessageFor(l => l.Name)</p>
+                </tr>
+                <tr>
+                    <td><button>AddLeague</button></td>
+                </tr>
+            </table>
+        </div>
+    </fieldset>
+}

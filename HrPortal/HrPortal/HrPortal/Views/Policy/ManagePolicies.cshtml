@@ -1,0 +1,35 @@
+﻿@model IEnumerable<HrPortal.Models.Data.Policy>
+@{
+    ViewBag.Title = "ViewPolicies";
+}
+
+<div class="row">
+    <div class="col-xs-12">
+        <h3>Policies</h3>
+        @Html.ActionLink("AddPolicy", "AddPolicy", "Policy", null, new { @class = "btn btn-primary" })
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <table class="table table-striped" style="width: auto;">
+            <thead>
+                <tr>
+                    <th>Policies</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var policy in Model)
+                {
+                    <tr>
+                        <td>@policy.ID</td>
+                        <td>@policy.Name</td>
+                        <td>
+                            @Html.ActionLink("Delete", "DeletePolicy", "Policy", new { ID = policy.ID }, null)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

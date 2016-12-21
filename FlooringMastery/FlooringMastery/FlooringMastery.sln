@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlooringMastery.UI", "FlooringMastery.CLI\FlooringMastery.UI.csproj", "{3A9E90E6-A4E7-499E-9CD9-17856E0F5295}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlooringMastery.BLL", "FlooringMastery.BLL\FlooringMastery.BLL.csproj", "{ED3D53D6-1A21-4874-9C48-0621F3B5A603}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlooringMastery.Data", "FlooringMastery.Data\FlooringMastery.Data.csproj", "{2242142E-FD88-40B1-B5E2-282A9D3A6699}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlooringMastery.BLL.Tests", "FlooringMastery.BLL.Tests\FlooringMastery.BLL.Tests.csproj", "{A7AC4CB4-570E-4E93-8FBF-370C3DDBFB9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlooringMastery.Models", "FlooringMastery.Models\FlooringMastery.Models.csproj", "{860A2114-174A-4D04-A538-2094FA2A4CD3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A9E90E6-A4E7-499E-9CD9-17856E0F5295}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A9E90E6-A4E7-499E-9CD9-17856E0F5295}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A9E90E6-A4E7-499E-9CD9-17856E0F5295}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A9E90E6-A4E7-499E-9CD9-17856E0F5295}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED3D53D6-1A21-4874-9C48-0621F3B5A603}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED3D53D6-1A21-4874-9C48-0621F3B5A603}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED3D53D6-1A21-4874-9C48-0621F3B5A603}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED3D53D6-1A21-4874-9C48-0621F3B5A603}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2242142E-FD88-40B1-B5E2-282A9D3A6699}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2242142E-FD88-40B1-B5E2-282A9D3A6699}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2242142E-FD88-40B1-B5E2-282A9D3A6699}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2242142E-FD88-40B1-B5E2-282A9D3A6699}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7AC4CB4-570E-4E93-8FBF-370C3DDBFB9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7AC4CB4-570E-4E93-8FBF-370C3DDBFB9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7AC4CB4-570E-4E93-8FBF-370C3DDBFB9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7AC4CB4-570E-4E93-8FBF-370C3DDBFB9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{860A2114-174A-4D04-A538-2094FA2A4CD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{860A2114-174A-4D04-A538-2094FA2A4CD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{860A2114-174A-4D04-A538-2094FA2A4CD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{860A2114-174A-4D04-A538-2094FA2A4CD3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

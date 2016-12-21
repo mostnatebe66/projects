@@ -1,0 +1,4 @@
+ID  7
+Name  Non-Vulgarism
+CategoryID  Conduct
+Description  Non-Vulgarism is punishable by 8 lashings because we say so. 

@@ -1,0 +1,31 @@
+﻿﻿@model BaseballLeague.ViewModels.PlayerTradeVM
+@{
+    ViewBag.Title = "AdminSelectPlayersToTrade";
+}
+
+<h2>Select Players ToTrade</h2>
+
+@using (Html.BeginForm("AdminSelectPlayersToTrade", "Admin", null, FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-xs-12">
+            <lable>Select Players</lable>
+            @Html.DropDownListFor(vm => vm.P1, Model.TeamOnePlayers, "-Select a Player", new { @class = "form-control" })
+
+        </div>
+    </div>
+    <br />
+    <div>
+        <div class="row">
+            <div class="col-xs-12">
+                <lable>Select Players</lable>
+                @Html.DropDownListFor(vm => vm.P2, Model.TeamTwoPlayers, "-Select a Player", new { @class = "form-control" })<br>
+            </div>
+            <br>
+            <br>
+            <button class="btn btn-primary">Trade</button>
+            @Html.ActionLink("Cancel", "AdminTradeTeamListSelect", "Admin", null, new { @class = "btn btn-danger" })
+        </div>
+    </div>
+
+}

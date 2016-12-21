@@ -1,0 +1,51 @@
+﻿﻿@model BaseballLeague.Models.League
+
+@{
+    ViewBag.Title = "DeleteLeague";
+}
+
+<h3>Delete League</h3>
+
+<div class="row">
+    <div class="col-md-6">Are you sure that you want to delete the @Model.Name league?</div>
+</div>
+
+<br />
+
+@using (Html.BeginForm("DeleteLeague", "Admin"))
+{
+    @Html.HiddenFor(t => t.LeagueID)
+    @Html.HiddenFor(t => t.Name)
+
+    if (@Model.Teams != null)
+    {
+        <div class="row">
+            <div class="col-md-6" style="color: red">Warning - Deleting league will delete all teams and players on that team! Continue?:</div>
+        </div>
+
+        <table id="teamDetails" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Manager</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var team in @Model.Teams)
+                {
+                    <tr>
+                        @if (team != null)
+                        {
+                            <td class="col-md-3">@team.Name</td>
+                            <td class="col-md-3">@team.Manager</td>
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    }
+
+    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+    @Html.ActionLink("Cancel", "AdminLeagueList", "Admin", null, new { @class = "btn btn-sm btn-info" })
+}

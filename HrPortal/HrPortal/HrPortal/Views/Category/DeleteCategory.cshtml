@@ -1,0 +1,12 @@
+﻿@model HrPortal.Models.Data.Category
+@{
+    ViewBag.Title = "DeleteCategory";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(i => i.Name)
+    <p>Are you sure that you wish to delete this item:  </p>
+    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+    @Html.ActionLink("Cancel", "ViewCategories", "Category", new { categoryName = Model.Name }, new { @class = "btn btn-sm btn-info" })
+}

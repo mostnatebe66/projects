@@ -1,0 +1,4 @@
+10/18/2016 2:15:00 PM: System.ArgumentNullException: Value cannot be null.
+Parameter name: value
+   at System.String.StartsWith(String value)
+   at FlooringMastery.Data.FileOrderRepository.ChangeOrderContents(Order orderToEdit, Order oldOrder, String oldDate) in C:\_repos\bitbucket\nate-betz-individual-work\FlooringMastery\FlooringMastery\FlooringMastery.Data\FileOrderRepository.cs:line 104

@@ -1,0 +1,95 @@
+﻿@model HrPortal.Models.ResumeVM
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<head>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+</head>
+<div class="row">
+    <div class="col-xs-12 col-sm-3">
+
+    </div>
+    <div class="col-xs-12 col-sm-9">
+        <div class="row">
+            <div class="col-xs-12">
+                <h3>Application Page</h3>
+                <div class="row">
+                    @using (Html.BeginForm())
+                    {
+                        <fieldset>
+                            @Html.ValidationSummary(true)
+                            <div class="col-xs-12 col-sm-7">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">Personal Details</h4>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="form-group">
+                                            <label>First Name:</label>
+                                            @Html.TextBoxFor(a => a.Applicant.FirstName, new { @class = "form-control" })
+                                            <p style="color: red" >@Html.ValidationMessageFor(a => a.Applicant.FirstName)</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Last Name:</label>
+                                            @Html.TextBoxFor(a => a.Applicant.LastName, new { @class = "form-control" })
+                                            <p style="color: red">@Html.ValidationMessageFor(a => a.Applicant.LastName)</p>
+</div>
+                                        <div class="form-group">
+                                            <label>Email Address</label>
+                                            @Html.TextBoxFor(a => a.Applicant.EmailAddress, new { @class = "form-control" })
+                                            <p style="color: red">@Html.ValidationMessageFor(a => a.Applicant.EmailAddress)</p>
+</div>
+                                        <h4>Phone Number</h4>
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(a => a.Applicant.PhoneNumber, new { @class = "form-control" })
+                                            <p style="color: red">@Html.ValidationMessageFor(a => a.Applicant.PhoneNumber)</p>
+</div>
+                                        <h4>Current Employer</h4>
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(a => a.Applicant.CurrentEmployer, new { @class = "form-control" })
+                                            <p style="color: red">@Html.ValidationMessageFor(a => a.Applicant.CurrentEmployer)</p>
+</div>
+                                        <h4>Position Applied For</h4>
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(a => a.Applicant.PositionApplied, new { @class = "form-control" })
+                                            <p style="color: red">@Html.ValidationMessageFor(a => a.Applicant.PositionApplied)</p>
+</div>
+                                        <h4>Street Address</h4>
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(a => a.Applicant.StreetAddress, new { @class = "form-control" })
+                                            <p style="color: red">@Html.ValidationMessageFor(a => a.Applicant.StreetAddress)</p>
+</div>
+                                        <h4>City</h4>
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(a => a.Applicant.City, new { @class = "form-control" })
+                                            <p style="color: red">@Html.ValidationMessageFor(a => a.Applicant.City)</p>
+</div>
+                                        <h4>State</h4>
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(a => a.Applicant.State, new { @class = "form-control" })
+                                            <p style="color: red">@Html.ValidationMessageFor(a => a.Applicant.State)</p>
+</div>
+                                        <h4>Postal Code</h4>
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(a => a.Applicant.ZipCode, new { @class = "form-control" })
+                                            <p style="color: red">@Html.ValidationMessageFor(a => a.Applicant.ZipCode)</p>
+</div>
+                                        <button class="btn btn-primary">Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section AnythingScripts {
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+}

@@ -1,0 +1,47 @@
+﻿﻿@model List<BaseballLeague.Models.Team>
+@{
+    ViewBag.Title = "AdminTeamList";
+}
+<div class="row">
+    <div class="col-xs-6">
+        <br />
+        @Html.ActionLink("Add New Team", "AddTeam", "Admin", null, new { @class = "btn btn-primary" })
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <td><h4>TEAM</h4></td>
+                    <td><h4>MANAGER</h4></td>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+            {
+                foreach (var team in Model)
+                {
+                        <tr>
+                            <td>@team.Name</td>
+                            <td>@team.Manager</td>
+                            <td>
+                                @Html.ActionLink("Edit", "EditTeam", "Admin", new { teamId = team.TeamID }, new { @class = "btn btn-sm btn-info " })
+                                @Html.ActionLink("Delete", "DeleteTeam", "Admin", new { teamId = team.TeamID }, new { @class = "btn btn-sm btn-danger" })
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr><td style="color: red">There are no teams!</td></tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section scripts{
+    <link rel="stylesheet" href="//code.jquery.com/ui/3.1.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui-3.1.1.min.js"></script>
+    <script src="~/Scripts/app/LeagueAccordian.js"></script>
+}

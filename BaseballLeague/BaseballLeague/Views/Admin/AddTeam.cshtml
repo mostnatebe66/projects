@@ -1,0 +1,32 @@
+﻿﻿@model BaseballLeague.Models.AddTeamVM
+@{
+    ViewBag.Title = "AddTeam";
+}
+
+<h4>Add New Team</h4>
+@Html.ActionLink("Cancel", "AdminTeamList", "Admin", null, new { @class = "btn btn-danger" })
+<br />
+<br />
+@using (Html.BeginForm("AddTeam", "Admin"))
+{
+    <fieldset>
+        @Html.ValidationSummary(true)
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label>Team Name:</label>
+                @Html.TextBoxFor(t => t.Team.Name, new { @class = "form-control" })
+                <p style="color: red">@Html.ValidationMessageFor(t => t.Team.Name)</p>
+            </div>
+            <div class="form-group">
+                <label>Manager Name:</label>
+                @Html.TextBoxFor(t => t.Team.Manager, new { @class = "form-control" })
+                <p style="color: red">@Html.ValidationMessageFor(t => t.Team.Manager)</p>
+            </div>
+            <div class="form-group">
+                <label>League:</label>
+                @Html.DropDownListFor(t => t.Team.LeagueID, Model.Leagues, "-Choose One-", new { @class = "form-control" })
+            </div>
+            <button class="btn btn-primary">AddTeam</button>
+        </div>
+        </fieldset>
+        }

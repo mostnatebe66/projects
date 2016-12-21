@@ -1,0 +1,49 @@
+﻿@model HrPortal.Models.ViewPoliciesViewModel
+@{
+    ViewBag.Title = "ViewPolicies";
+}
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-xs-12">
+            <h3>Policies</h3>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Category</label>
+        @Html.DropDownList("CategoryID", Model.Categories.Select(s => new SelectListItem { Text = s.Name }), new { @class = "form-control", placeholder = "Policy" })
+    </div>
+    <div class="col-xs-12">
+        <button type="submit" class="btn btn-sm btn-primary">Select Category</button>
+
+    </div><br>
+}
+<div class="row">
+    <div class="col-xs-12">
+        <table class="table table-striped" style="width: auto;">
+            <thead>
+                <tr>
+                    <th>Current Policies</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Policies != null)
+                {
+
+                    foreach (var policy in Model.Policies)
+                    {
+                        <tr>
+                            <td>@policy.ID</td>
+                            <td>@policy.Name</td>
+                            <td>
+                                @Html.ActionLink("View Policy", "ViewPolicy", "Policy", new { ID = policy.ID }, null)
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>

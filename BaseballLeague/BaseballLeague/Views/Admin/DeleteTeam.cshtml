@@ -1,0 +1,63 @@
+﻿﻿@model BaseballLeague.Models.Team
+
+@{
+    ViewBag.Title = "DeleteTeam";
+}
+
+<h3>Delete Team</h3>
+
+<div class="row">
+    <div class="col-md-6">Are you sure that you want to delete @Model.Name?</div>
+</div>
+
+<br />
+
+@using (Html.BeginForm("DeleteTeam", "Admin"))
+{
+    @Html.HiddenFor(t => t.TeamID)
+    @Html.HiddenFor(t => t.Name)
+    @Html.HiddenFor(t => t.LeagueID)
+
+    <div class="row">
+        <div class="col-md-1 "><strong>Manager:</strong></div>
+        <div class="col-md-11 text-left">@Model.Manager</div>
+    </div>
+    <br />
+
+    if (@Model.Players != null)
+    {
+        <div class="row">
+            <div class="col-md-6" style="color: red">Warning...All players will be deleted!:</div>
+        </div>
+
+        <table id="teamDetails" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Player</th>
+                    <th></th>
+                    <th>Jersey</th>
+                    <th>Position</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var player in @Model.Players)
+                {
+                    <tr>
+                        @if (player != null)
+                        {
+                            <td class="col-md-3">@player.FName</td>
+                            <td class="col-md-3">@player.LName</td>
+                            <td class="col-md-1">@player.JerseyNum</td>
+                            <td class="col-md-8">@player.PlayerPosition</td>
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    }
+
+    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+    @Html.ActionLink("Cancel", "AdminPlayerList", "Admin", null, new { @class = "btn btn-sm btn-info" })
+}

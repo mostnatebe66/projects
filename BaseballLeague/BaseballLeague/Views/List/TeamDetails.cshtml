@@ -1,0 +1,34 @@
+﻿﻿@model BaseballLeague.Models.Team
+@{
+    ViewBag.Title = "TeamDetails";
+}
+
+<div class="row">
+    <br />
+    <div class="col-xs-4 text-left category">
+        <h2>@Model.Name</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-2 "><strong>Manager</strong></div>
+    <div class="col-md-10 text-left">@Model.Manager</div>
+</div>
+
+
+@if (@Model.Players != null)
+{
+    foreach (var player in @Model.Players)
+    {
+        if (player != null)
+        {
+            <div class="row">
+
+                <div class="col-md-2 text-left"><strong>@player.PlayerPosition</strong></div>
+                <div class="col-md-10 text-left">@Html.ActionLink((player.FName + " " + player.LName), "PlayerDetails", "List", new { id = player.PlayerID }, new { @class = "btn btn-sm btn-default" })</div>
+
+            </div>
+        }
+
+    }
+}

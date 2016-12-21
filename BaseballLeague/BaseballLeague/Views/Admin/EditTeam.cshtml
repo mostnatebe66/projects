@@ -1,0 +1,33 @@
+﻿﻿@using System.Web.UI.WebControls
+@model BaseballLeague.Models.AddTeamVM
+@{
+    ViewBag.Title = "EditTeam";
+}
+
+<h4>Edit Team</h4>
+
+@Html.ActionLink("Cancel", "AdminTeamList", "Admin", null, new { @class = "btn btn-danger" })
+<br />
+<br />
+@using (Html.BeginForm("EditTeam", "Admin"))
+{
+    @Html.HiddenFor(t => t.Team.TeamID)
+    <div class="col-sm-12">
+        <div class="form-group">
+            <label>Team Name:</label>
+            @Html.TextBoxFor(t => t.Team.Name, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Manager Name:</label>
+            @Html.TextBoxFor(t => t.Team.Manager, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>League:</label>
+            @Html.DropDownListFor(t => t.Team.LeagueID, Model.Leagues, "-Choose One-", new { @class = "form-control" })
+        </div>
+        <tr>
+            <button class="btn btn-primary">Save</button>
+        </tr>
+
+    </div>
+}

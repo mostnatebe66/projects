@@ -1,0 +1,4 @@
+ID  3
+Name  Health Insurance
+CategoryID  Employee Benefits
+Description  We deny health insurance because we are anarchic.

@@ -1,0 +1,26 @@
+﻿﻿@model BaseballLeague.Models.Player
+@{
+    ViewBag.Title = "PlayerDetails";
+}
+
+<h2>@Model.FName @Model.LName </h2>
+
+<div class="row">
+    <div class="col-md-2 "><strong>Jersey Number</strong></div>
+    <div class="col-md-10 text-left">@Model.JerseyNum</div>
+</div>
+
+<div class="row">
+    <div class="col-md-2 "><strong>Current Position</strong></div>
+    <div class="col-md-10 text-left">@Model.PlayerPosition</div>
+</div>
+
+<div class="row">
+    <div class="col-md-2 "><strong>Batting Average</strong></div>
+    <div class="col-md-10 text-left">@Model.BattingAVG</div>
+</div>
+
+<div class="row">
+    <div class="col-md-2 "><strong>Years Played</strong></div>
+    <div class="col-md-10 text-left">@Model.YearsPlayed</div>
+</div>

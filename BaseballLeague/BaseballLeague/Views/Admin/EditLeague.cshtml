@@ -1,0 +1,27 @@
+﻿﻿@model BaseballLeague.Models.League
+@{
+    ViewBag.Title = "EditLeague";
+}
+
+<div class="row">
+    <div class="col-xs-12">
+        <h3>Edit League</h3>
+        @Html.ActionLink("Return to Leagues", "AdminLeagueList", "Admin")
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        @using (Html.BeginForm("EditLeague", "Admin", null, FormMethod.Post, new { id = "editLeagueForm" }))
+        {
+            <div class="form-group">
+                <label>League Name</label>
+                @Html.HiddenFor(l => l.LeagueID)
+                @Html.TextBoxFor(l => l.Name, new { @class = "form-control", placeholder = "Name" })
+            </div>
+
+            <button type="submit" class="btn btn-success">Save</button>
+            @Html.ActionLink("Cancel", "AdminLeagueList", "Admin", null, new { @class = "btn btn-info" })
+        }
+    </div>
+</div>

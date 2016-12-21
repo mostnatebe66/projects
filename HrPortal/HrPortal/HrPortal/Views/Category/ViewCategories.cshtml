@@ -1,0 +1,22 @@
+﻿@model IEnumerable<HrPortal.Models.Data.Category>
+@{
+    ViewBag.Title = "ViewCategories";
+}
+
+<h2>Add/Delete Categories</h2>
+@using (Html.BeginForm("DeleteCategory", "Category", FormMethod.Get))
+{
+    <div class="form-group">
+        <label>Category</label>
+        @Html.DropDownList("CategoryID", Model.Select(s => new SelectListItem { Text = s.Name }), new { @class = "form-control", placeholder = "Policy"})
+    </div>
+    <div class="col-xs-12">
+        <button type="submit" class="btn btn-sm btn-primary">Delete Category</button>
+    </div><br>
+}
+<div class="col-xs-12">
+    @Html.ActionLink("AddCategory", "AddCategory", "Category", null, new { @class = "btn btn-primary" })
+</div><br>
+
+
+

@@ -1,0 +1,39 @@
+﻿﻿@model List<BaseballLeague.Models.League>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <h1>Leagues</h1>
+    <div class="col-md-4">
+        <div>
+            @foreach (var league in Model)
+            {
+
+                <h2>@league.Name</h2>
+
+                <ul>
+                    @if (league.Teams != null)
+                    {
+                        foreach (var teams in league.Teams)
+                        {
+                            <li> @Html.ActionLink(@teams.Name, "TeamDetails", "List", new { id = teams.TeamID }, null)</li>
+                        }
+                    }
+                </ul>
+            }
+
+        </div>
+    </div>
+    <div class="col-md-4 offset-md-4">
+        <img src="~/Content/baseball.jpg" alt="baseball here" height="300" width="750">
+        <h4>Take me out to the ball game!</h4>
+    </div>
+</div>
+
+@section scripts{
+    <link rel="stylesheet" href="//code.jquery.com/ui/3.1.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui-3.1.1.min.js"></script>
+}

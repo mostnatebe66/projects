@@ -1,0 +1,41 @@
+﻿﻿@model List<BaseballLeague.Models.League>
+@{
+    ViewBag.Title = "AdminLeagueList";
+}
+
+<div class="row">
+    <div class="col-xs-4">
+        <br />
+        @Html.ActionLink("Add New League", "AddLeague", "Admin", null, new { @class = "btn btn-primary" })
+        <table class="table table-hover">
+            <thead>LEAGUES</thead>
+            <tbody>
+                @if (Model != null)
+            {
+                foreach (var league in Model)
+                {
+                        <tr>
+                            <td>@league.Name</td>
+                            <td>
+                                @Html.ActionLink("Edit", "EditLeague", "Admin", new { leagueId = league.LeagueID }, new { @class = "btn btn-sm btn-info " })
+                                @Html.ActionLink("Delete", "DeleteLeague", "Admin", new { leagueId = league.LeagueID }, new { @class = "btn btn-sm btn-danger" })
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr><td style="color: red">There are no leagues!</td></tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section scripts{
+    <link rel="stylesheet" href="//code.jquery.com/ui/3.1.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui-3.1.1.min.js"></script>
+}
